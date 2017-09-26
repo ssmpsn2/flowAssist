@@ -5,6 +5,7 @@
 #'@param keepFluoro (Optional) Logical, if TRUE appends the marker label to the fluorescence label
 #'@param sepChar (Optional, dependent on keepFluoro = TRUE) String defining the character separating
 #'  the marker and fluorescene labels. Default = "-"
+#'@export
 flow_MarkerApply<- function(flowObj, keepFluoro = FALSE, sepChar = "-") {
   flowFrame.MarkerApply<- function(flowDataFrame = flowObj, keepFluoro, sepChar) {
     if (exists("paramInfo") == FALSE) {

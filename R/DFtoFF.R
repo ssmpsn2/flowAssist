@@ -5,6 +5,7 @@
 #'
 #' @param DF A data frame or list of data frames to be converted
 #' @return A flowFrame or list of flowFrames
+#' @export
 DFtoFF<-function(DF){
   if(class(DF) == "data.frame"){
     return(flowFrame(as.matrix(DF)))

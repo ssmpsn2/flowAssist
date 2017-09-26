@@ -12,6 +12,7 @@
 #'   ignores provided parameter, upperBound, and lowerBound arguments (all the logic is in the table).
 #'   Default = FALSE
 #' @return A pruned flow object of the type initially passed to the function
+#' @export
 flow_Prune<-function(flowObj, parameter, upperBound = NULL, lowerBound = NULL, fromTable = FALSE) {
 
   ## flowFrame.Prune() is defined here so it can be called by flow.Prune() in a way that makes sense given

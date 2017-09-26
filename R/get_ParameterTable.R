@@ -17,6 +17,7 @@
 #'   a parameter indicates that that parameter should be dropped when the flow_Prune() function
 #'   is called.
 #' @param parameterTableFileName Character string representing file name of parameter table in working directory.
+#' @export
 get_Parameters<-function(parameterTableFileName) {
 
   if(missing(parameterTableFileName)){

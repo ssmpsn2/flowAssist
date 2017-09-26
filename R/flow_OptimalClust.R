@@ -9,6 +9,7 @@
 #' @param kMax Integer representing max number of possible clusters to consider
 #' @param nBoot Integer representing number of times to repeat the analysis from a random starting position, must be >1 for gap statistic analysis
 #' @param plot Logical indicating whether or not to generate graphical plots for wss, silhouette, and gap statistic methods
+#' @export
 flow_OptimalClust<-function(flowObj, algorithm, kMax, nBoot, plot = TRUE) {
 
   alg<-deparse(substitute(algorithm))

@@ -11,7 +11,7 @@
 #' @param asDF Logical value representing whether or not to convert the incoming
 #'   FCS files to dataframes, instead of flow frames. Defaults to FALSE.
 #' @return A list of data frames or flow frames.
-#'
+#' @export
 get_FCS<-function(fileName, path, asDF = FALSE) {
 
   flowFrameList<-list()

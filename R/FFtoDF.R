@@ -4,6 +4,7 @@
 #'
 #' @param FF A flowFrame or list of flowFrames to be converted
 #' @return A data frame or list of data frames
+#' @export
 FFtoDF<-function(FF){
 
   if(class(FF) == "flowFrame"){
