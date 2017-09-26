@@ -1,6 +1,7 @@
 #' Import Packages
 #' 
 #' Simple function for downloading and installing necessary packages for flow analysis.
+#' @export
 Import_Packages<- function(){
   source("https://bioconductor.org/biocLite.R")
   biocLite("flowCore")
