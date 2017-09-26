@@ -7,6 +7,7 @@
 #'   Transformation options: arcsin OR arcsinh (Multivariate arc-sinh transform), box-cox OR boxcox (Multivariate box-cox transform),
 #'   biexponential OR biexp (Multivariate biexponential transform), linlog OR lin-log (Multivariate lin-log transform)
 #' @return A transformed flow object of the type initially passed to the function
+#' @export
 flow_Transform<-function(flowObj, transformation) {
 
   ## Check for valid arguments

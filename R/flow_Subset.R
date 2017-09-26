@@ -4,6 +4,7 @@
 #' @param flowObj A data frame, flowFrame, or a list containing these data types
 #' @param subsetPercent Numeric from 0-1 denoting the percentage of the original data set to return
 #' @return A subsetted flow object of the type initially passed to the function
+#' @export
 flow_Subset<-function(flowObj, subsetPercent){
 
   if(subsetPercent >= 1 | subsetPercent <= 0){
