@@ -2,7 +2,9 @@
 #'
 #' Function to remove columns or events that meet specific conditions from a flow data frame.
 #' @param flowObj Data frame, flowFrame, or a list containing either class of object to be manipulated
-#' @param parameter String or vector of strings matching a column label or set of labels in the flow data frame
+#' @param parameter String or vector of strings matching a column label or set of labels in the flow data frame.
+#'   If a parameter argument is passed but no upper or lower bounds are specified, all designated parameters will
+#'   be dropped from the flow data frame.
 #' @param upperBound (Optional) Numeric defining the allowed maximum value for a specific parameter (if designated by the parameter argument)
 #'   or for any parameter (if no parameter argument provided). If a value falls outside this bound, the entire event
 #'     (row) will be removed from the flow data frame.

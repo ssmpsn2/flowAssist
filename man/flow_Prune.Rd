@@ -10,7 +10,9 @@ flow_Prune(flowObj, parameter, upperBound = NULL, lowerBound = NULL,
 \arguments{
 \item{flowObj}{Data frame, flowFrame, or a list containing either class of object to be manipulated}
 
-\item{parameter}{String or vector of strings matching a column label or set of labels in the flow data frame}
+\item{parameter}{String or vector of strings matching a column label or set of labels in the flow data frame.
+If a parameter argument is passed but no upper or lower bounds are specified, all designated parameters will
+be dropped from the flow data frame.}
 
 \item{upperBound}{(Optional) Numeric defining the allowed maximum value for a specific parameter (if designated by the parameter argument)
 or for any parameter (if no parameter argument provided). If a value falls outside this bound, the entire event
