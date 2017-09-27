@@ -22,6 +22,11 @@ get_FCS<-function(fileName, path, asDF = FALSE) {
 
     if (missing(fileName)) {
       fileNames<-list.files(pattern = ".fcs$", ignore.case = TRUE)
+      
+      if(length(fileNames) == 0L){
+        stop("No FCS files found in current working directory.")
+      }
+      
     }
 
     else {
