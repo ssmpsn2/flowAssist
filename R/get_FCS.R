@@ -11,6 +11,7 @@
 #' @param asDF Logical value representing whether or not to convert the incoming
 #'   FCS files to dataframes, instead of flow frames. Defaults to FALSE.
 #' @return A list of data frames or flow frames.
+#' @import flowCore
 #' @export
 get_FCS<-function(fileName, path, asDF = FALSE) {
 
@@ -52,7 +53,7 @@ get_FCS<-function(fileName, path, asDF = FALSE) {
   }
 
   for (i in 1:length(fileNames)) {
-    flowFrameList[[i]]<-read.FCS(fileNames[i], transformation = FALSE)
+    flowFrameList[[i]]<-flowCore::read.FCS(fileNames[i], transformation = FALSE)
   }
 
   setwd(currentWD)
