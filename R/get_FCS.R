@@ -14,7 +14,7 @@
 #' @import flowCore
 #' @export
 get_FCS<-function(fileName, path, asDF = FALSE) {
-
+  
   flowFrameList<-list()
   currentWD<-getwd()
 
