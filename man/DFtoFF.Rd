@@ -2,7 +2,7 @@
 % Please edit documentation in R/DFtoFF.R
 \name{DFtoFF}
 \alias{DFtoFF}
-\title{Data frame to flowFrame}
+\title{Convert a data frame to a flowFrame}
 \usage{
 DFtoFF(DF)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/FFtoDF.R
 \name{FFtoDF}
 \alias{FFtoDF}
-\title{flowFrame to data frame}
+\title{Convert a flowFrame to a data frame}
 \usage{
 FFtoDF(FF)
 }
