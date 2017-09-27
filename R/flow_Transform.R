@@ -7,6 +7,8 @@
 #'   Transformation options: arcsin OR arcsinh (Multivariate arc-sinh transform), box-cox OR boxcox (Multivariate box-cox transform),
 #'   biexponential OR biexp (Multivariate biexponential transform), linlog OR lin-log (Multivariate lin-log transform)
 #' @return A transformed flow object of the type initially passed to the function
+#' @import flowTrans
+#' @import flowClust
 #' @export
 flow_Transform<-function(flowObj, transformation) {
 
@@ -45,7 +47,7 @@ flow_Transform<-function(flowObj, transformation) {
 
   ## The actual transformation function, built on the flowTrans() function
   flowFrame.Transform<-function(flowObj, transformation) {
-    flowFrameTrans<-flowTrans(dat=flowObj, fun=transformation, colnames(flowObj), n2f=FALSE, parameters.only = FALSE)
+    flowFrameTrans<-flowTrans::flowTrans(dat=flowObj, fun=transformation, colnames(flowObj), n2f=FALSE, parameters.only = FALSE)
     return(flowFrameTrans$result)
   }
 

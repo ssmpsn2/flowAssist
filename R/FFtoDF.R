@@ -4,6 +4,7 @@
 #'
 #' @param FF A flowFrame or list of flowFrames to be converted
 #' @return A data frame or list of data frames
+#' @import flowCore
 #' @export
 FFtoDF<-function(FF){
 
@@ -16,7 +17,7 @@ FFtoDF<-function(FF){
     length(frameList)<-length(FF)
     for(i in 1:length(FF)){
       if(class(FF[[i]]) == "flowFrame"){
-        frameList[[i]]<-as.data.frame(exprs(FF[[i]]))
+        frameList[[i]]<-as.data.frame(flowCore::exprs(FF[[i]]))
         names(frameList)[[i]]<-names(FF)[[i]]
       }
       else{

@@ -30,9 +30,9 @@ flow_Subset<-function(flowObj, subsetPercent){
         names(flowList)[[i]]<-names(flowObj)[[i]]
       }
       if(class(flowObj[[i]]) == "flowFrame") {
-        flowList[[i]]<-as.data.frame(exprs(flowObj[[i]]))
+        flowList[[i]]<-FFtoDF(flowObj[[i]])
         flowList[[i]]<-subsetter(flowObj[[i]], subsetPercent)
-        flowList[[i]]<-flowFrame(as.matrix(flowList[[i]]))
+        flowList[[i]]<-DFtoFF(flowList[[i]])
         names(flowList)[[i]]<-names(flowObj)[[i]]
       }
     }
@@ -40,9 +40,9 @@ flow_Subset<-function(flowObj, subsetPercent){
   }
 
   if(class(flowObj) == "flowFrame") {
-    flowObj<-as.data.frame(exprs(flowObj))
+    flowObj<-DFtoFF(flowObj)
     flowObj<-subsetter(flowObj, subsetPercent)
-    return(flowFrame(as.matrix(flowObj)))
+    return(DFtoFF(flowObj))
   }
 
 }
