@@ -1,4 +1,4 @@
-#' Data frame to flowFrame
+#' Convert a data frame to a flowFrame
 #'
 #' Utility function for coercing data frames to the 'flowFrame' S4 class, which many flow
 #'   packages are designed to work with.

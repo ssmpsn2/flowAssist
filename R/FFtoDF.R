@@ -1,4 +1,4 @@
-#' flowFrame to data frame
+#' Convert a flowFrame to a data frame
 #'
 #' Utility function for coercing S4-type flowFrame objects to data frames
 #'
