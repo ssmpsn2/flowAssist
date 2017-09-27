@@ -9,8 +9,7 @@ flow_OptimalClust(flowObj, algorithm, kMax, nBoot, plot = TRUE)
 \arguments{
 \item{flowObj}{A data frame or flowFrame to be analyzed}
 
-\item{algorithm}{The clustering algorithm to utilize and attempt to generate an optimal cluster number for
-Options (no quotations): kmeans, pam, clara, hcut}
+\item{algorithm}{The clustering algorithm to utilize. Options (no quotations): kmeans, pam (Partitioning Around Mediods), clara (Clustering LARge Applications), hcut (Hierarchical clustering, cut tree into 'k' clusters)}
 
 \item{kMax}{Integer representing max number of possible clusters to consider}
 
@@ -21,5 +20,5 @@ Options (no quotations): kmeans, pam, clara, hcut}
 \description{
 Function implementing various statistical methods to determine the optimal number of clusters for flow cytometry data,
   using various clustering algorithms. ***WARNING*** extremely computationally intensive-- very large data sets may not
-  function and/or may take significant time to complete
+  function and/or may take significant time to complete.
 }

@@ -9,9 +9,9 @@ flow_Transform(flowObj, transformation)
 \arguments{
 \item{flowObj}{A data frame, flowFrame, or a list containing these data types}
 
-\item{transformation}{The transformation to be performed, case insensitive, quotations allowed but not required
+\item{transformation}{The transformation to be performed, case insensitive, quotations allowed but not required.
 Transformation options: arcsin OR arcsinh (Multivariate arc-sinh transform), box-cox OR boxcox (Multivariate box-cox transform),
-biexponential OR biexp (Multivariate biexponential transform), linlog OR lin-log (Multivariate lin-log transform)}
+biexponential OR biexp (Multivariate biexponential transform), linlog OR lin-log (Multivariate lin-log transform).}
 }
 \value{
 A transformed flow object of the type initially passed to the function
