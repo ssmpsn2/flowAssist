@@ -3,9 +3,9 @@
 #' Simplified and more flexible wrapper for the flowTrans() function supplied by the
 #' flowTrans package.
 #' @param flowObj A data frame, flowFrame, or a list containing these data types
-#' @param transformation The transformation to be performed, case insensitive, quotations allowed but not required
+#' @param transformation The transformation to be performed, case insensitive, quotations allowed but not required.
 #'   Transformation options: arcsin OR arcsinh (Multivariate arc-sinh transform), box-cox OR boxcox (Multivariate box-cox transform),
-#'   biexponential OR biexp (Multivariate biexponential transform), linlog OR lin-log (Multivariate lin-log transform)
+#'   biexponential OR biexp (Multivariate biexponential transform), linlog OR lin-log (Multivariate lin-log transform).
 #' @return A transformed flow object of the type initially passed to the function
 #' @import flowTrans
 #' @import flowClust
