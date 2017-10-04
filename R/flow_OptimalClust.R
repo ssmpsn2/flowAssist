@@ -38,7 +38,7 @@ flow_OptimalClust<-function(flowObj, algorithm, kMax, nBoot, plot = TRUE) {
     }
 
     if(plot){
-      ggplot2::plot(wss + ggplot2::geom_vline(xintercept = wssNum, linetype = 2))
+      plot(wss + ggplot2::geom_vline(xintercept = wssNum, linetype = 2))
     }
 
     sil<-factoextra::fviz_nbclust(flowDataFrame, algorithm, method = "silhouette", k.max = kMax, nboot = nBoot)
