@@ -7,7 +7,7 @@
 get_CompMatrix(flowFrame)
 }
 \arguments{
-\item{flowFrame}{An object of the flowFrame class which possess compensation metadata.}
+\item{flowFrame}{An object of the flowFrame class which possesses compensation metadata.}
 }
 \value{
 A data frame of compensation values.

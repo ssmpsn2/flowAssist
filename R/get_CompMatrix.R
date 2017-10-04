@@ -6,7 +6,7 @@
 #' row labels denote spillover from other fluorophores detected in that channel.
 #' The returned compensation matrix can be edited and reapplied to any flowFrame using the flowCore function
 #' compensate(flowFrame, compensationMatrix), as long as the fluorophore labels match.
-#' @param flowFrame An object of the flowFrame class which possess compensation metadata.
+#' @param flowFrame An object of the flowFrame class which possesses compensation metadata.
 #' @return A data frame of compensation values.
 #' @import flowCore
 #' @export
