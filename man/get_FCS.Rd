@@ -4,10 +4,10 @@
 \alias{get_FCS}
 \title{FCS File Importer}
 \usage{
-get_FCS(fileName, path, asDF = FALSE)
+get_FCS(pattern, path, asDF = FALSE)
 }
 \arguments{
-\item{fileName}{(Optional) Character string designating a file name pattern.
+\item{pattern}{(Optional) Character string designating a file name pattern.
 Only files that match the pattern will be imported.}
 
 \item{path}{(Optional) Character string designating the file path in which to
@@ -21,5 +21,5 @@ A list of data frames or flow frames.
 }
 \description{
 Generic function for pulling in FCS files and returning a list of flow frames.
-  Default behavior is to import all .fcs files in the working directory. Names each element of the list using the associated filename, minus the ".fcs" file extension.
+  Default behavior is to import all .fcs files in the working directory. Names each element of the list using the associated file name, minus the ".fcs" file extension.
 }

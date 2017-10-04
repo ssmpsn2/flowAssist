@@ -1,8 +1,8 @@
 #' FCS File Importer
 #'
 #' Generic function for pulling in FCS files and returning a list of flow frames.
-#'   Default behavior is to import all .fcs files in the working directory. Names each element of the list using the associated filename, minus the ".fcs" file extension.
-#' @param fileName (Optional) Character string designating a file name pattern.
+#'   Default behavior is to import all .fcs files in the working directory. Names each element of the list using the associated file name, minus the ".fcs" file extension.
+#' @param pattern (Optional) Character string designating a file name pattern.
 #'   Only files that match the pattern will be imported.
 #'
 #' @param path (Optional) Character string designating the file path in which to
@@ -13,14 +13,14 @@
 #' @return A list of data frames or flow frames.
 #' @import flowCore
 #' @export
-get_FCS<-function(fileName, path, asDF = FALSE) {
+get_FCS<-function(pattern, path, asDF = FALSE) {
   
   flowFrameList<-list()
   currentWD<-getwd()
 
   if(missing(path)){
 
-    if (missing(fileName)) {
+    if (missing(pattern)) {
       fileNames<-list.files(pattern = ".fcs$", ignore.case = TRUE)
       
       if(length(fileNames) == 0L){
@@ -30,7 +30,7 @@ get_FCS<-function(fileName, path, asDF = FALSE) {
     }
 
     else {
-      fileNames<-list.files(pattern = fileName)
+      fileNames<-list.files(pattern = pattern)
       if (length(fileNames) == 0L) {
         stop(paste("File name not found in", getwd()))
       }
@@ -38,14 +38,14 @@ get_FCS<-function(fileName, path, asDF = FALSE) {
   }
 
   else {
-    if (missing(fileName)) {
+    if (missing(pattern)) {
       fileNames<-list.files(path = path, pattern = ".fcs$", ignore.case = TRUE)
       if (length(fileNames) == 0L) {
         stop(paste("File name not found in", filePath))
       }
     }
     else {
-      fileNames<-list.files(path = path, pattern = fileName)
+      fileNames<-list.files(path = path, pattern = pattern)
       if (length(fileNames) == 0L) {
         stop("File name not found, or unable to path correctly")
       }
