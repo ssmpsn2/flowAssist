@@ -10,8 +10,12 @@ get_CompMatrix(flowFrame)
 \item{flowFrame}{An object of the flowFrame class which possess compensation metadata.}
 }
 \value{
-A labeled data frame of compensation values.
+A data frame of compensation values.
 }
 \description{
 Reads the metadata of a flowFrame object and returns the compensation matrix which was applied to it.
+The structure of the returned data frame: Column labels denote fluorescence channel, while
+row labels denote spillover from other fluorophores detected in that channel.
+The returned compensation matrix can be edited and reapplied to any flowFrame using the flowCore function
+compensate(flowFrame, compensationMatrix), as long as the fluorophore labels match.
 }

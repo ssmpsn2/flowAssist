@@ -2,8 +2,12 @@
 #' Retrive Compensation Matrix
 #'
 #' Reads the metadata of a flowFrame object and returns the compensation matrix which was applied to it.
+#' The structure of the returned data frame: Column labels denote fluorescence channel, while
+#' row labels denote spillover from other fluorophores detected in that channel.
+#' The returned compensation matrix can be edited and reapplied to any flowFrame using the flowCore function
+#' compensate(flowFrame, compensationMatrix), as long as the fluorophore labels match.
 #' @param flowFrame An object of the flowFrame class which possess compensation metadata.
-#' @return A labeled data frame of compensation values.
+#' @return A data frame of compensation values.
 #' @import flowCore
 #' @export
 
@@ -13,7 +17,7 @@ get_CompMatrix<-function(flowFrame){
     stop("Object is not of class 'flowFrame'")
   }
   
-  if(is.null(keyword(flowFrame, "SPILL"))){
+  if(length(keyword(flowFrame)) == 0L | is.null(keyword(flowFrame, "SPILL"))){
     stop("No compensation metadata found")
   }
   
@@ -30,11 +34,12 @@ get_CompMatrix<-function(flowFrame){
   CDFcLabels<- as.vector(sapply(CDFcLabels, FUN = sub, pattern = "SPILL.", replacement = ""))
   CDFcLabels<- as.vector(sapply(CDFcLabels, FUN = sub, pattern = ".A", replacement = ""))
   CDFcLabels<- as.vector(sapply(CDFcLabels, FUN = gsub, pattern = "[^[:alnum:]]", replacement = ""))
-  cLabels<- as.vector(sapply(CDFcLabels, FUN = paste, "detector", sep = "-"))
-  rLabels<- as.vector(sapply(CDFcLabels, FUN = paste, "spillover"))
+  CDFcLabels<- toupper(CDFcLabels)
   
-  colnames(compDF)<-cLabels
-  row.names(compDF)<-rLabels
+  colnames(compDF)<- CDFcLabels
+  
+  rLabels<-as.vector(sapply(CDFcLabels, FUN = paste, "spillover"))
+  row.names(compDF)<- rLabels
   
   return(compDF)
 }
@@ -44,3 +49,10 @@ get_CompMatrix<-function(flowFrame){
 
 ## Name each element of the comp matrix list in a way that describes which flowFrames
 ## of the originally passed list each matrix applies to?
+
+
+
+
+
+
+
