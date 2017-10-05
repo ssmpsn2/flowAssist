@@ -82,6 +82,6 @@ flow_CompPlot<-function(compList, parameter, compMatrix) {
   }
   
   if(missing(parameter)){
-    mapply(compPlotGen, parameter = sampleNames, MoreArgs = list(compList, compMatrix), SIMPLIFY = FALSE)
+    invisible(mapply(compPlotGen, parameter = sampleNames, MoreArgs = list(compList, compMatrix), SIMPLIFY = FALSE))
   }
 }
