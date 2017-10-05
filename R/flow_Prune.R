@@ -325,7 +325,7 @@ flow_Prune<-function(flowObj, parameter, upperBound = NULL, lowerBound = NULL, f
   }
 
   if(class(flowObj) == "list") {
-    flowList<-as.list(NULL)
+    flowList<-list()
     length(flowList)<-length(flowObj)
 
     for(i in 1:length(flowObj)) {
@@ -334,7 +334,7 @@ flow_Prune<-function(flowObj, parameter, upperBound = NULL, lowerBound = NULL, f
         names(flowList)[[i]]<-names(flowObj)[[i]]
       }
       if(class(flowObj[[i]]) == "flowFrame") {
-        flowList[[i]]<-FFtoDF(flowList[[i]])
+        flowList[[i]]<-FFtoDF(flowObj[[i]])
         flowList[[i]]<-flowFrame.Prune(flowList[[i]], parameter, upperBound, lowerBound, fromTable)
         flowList[[i]]<-DFtoFF(flowList[[i]])
         names(flowList)[[i]]<-names(flowObj)[[i]]

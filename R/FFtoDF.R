@@ -13,7 +13,7 @@ FFtoDF<-function(FF){
   }
 
   if(class(FF) == "list"){
-    frameList<-as.list(NULL)
+    frameList<-list()
     length(frameList)<-length(FF)
     for(i in 1:length(FF)){
       if(class(FF[[i]]) == "flowFrame"){
