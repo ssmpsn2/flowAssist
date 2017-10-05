@@ -14,6 +14,8 @@
 #' @import ggplot2
 #' @import flowCore
 #' @import ggcyto
+#' @import grid
+#' @import gridExtra
 #' @export
 
 ## Compensation samples require some amount of pre-processing to make nice plots!
